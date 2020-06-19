@@ -1,4 +1,4 @@
-name: Hello Word
+name: Escreve coisas Ubuntu e Windows
 
 on: [push]
 
@@ -14,6 +14,7 @@ jobs:
         run: ls
   job-escreve-coisas-windows:
     runs-on: windows-latest
+    needs: ["job-escreve-coisas-ubuntu"]
     steps:
       - name: Escreve diretorio
         run: Get-Location
