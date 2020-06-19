@@ -5,7 +5,7 @@ on:
     branches:
       - 'feature/*'
     paths:
-      - '**.js'
+      - "**.js"
 
 jobs:
   job-escreve-build:
