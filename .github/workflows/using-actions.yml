@@ -1,4 +1,4 @@
-name: Ações do github
+name: Fazedo coisas com Ações do github
 
 on: [push]
 
@@ -13,3 +13,10 @@ jobs:
              who-to-greet: felipe-rodrigues
        - name: escreve resultado
          run: echo "${{ steps.greet.outputs.time }}"
+   job-escreve-infos-do-repositorio:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Clona repositorio pra maquina virtual
+         uses: actions/checkout@v2
+       - name: Escreve ultimo commit
+         run: git log --format="%h" -n 1

@@ -11,7 +11,9 @@ jobs:
       - name: escrevendo versão do git
         run:  git --version 
       - name: escrevendo estrutura de pasta
-        run: ls
+        run: |
+          ls
+          pwd
   job-escreve-coisas-windows:
     runs-on: windows-latest
     needs: ["job-escreve-coisas-ubuntu"]
