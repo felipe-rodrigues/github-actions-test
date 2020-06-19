@@ -10,5 +10,5 @@ jobs:
         run: echo "Hello Wolrd"
       - name: escrevendo versão do git
         run:  git --version 
-      - name: escrevendo ultimo commit
-        run: git log --format="%h" -n 1  
+      - name: escrevendo estrutura de pasta
+        run: ls  
