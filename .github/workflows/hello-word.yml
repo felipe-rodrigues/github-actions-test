@@ -8,3 +8,5 @@ jobs:
     steps:
       - name: escrevendo hello world
         run: echo "Hello Wolrd"
+      - name: escrevendo commit code
+        run:  git --version 
