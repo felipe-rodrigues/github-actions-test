@@ -20,3 +20,5 @@ jobs:
          uses: actions/checkout@v2
        - name: Escreve ultimo commit
          run: git log --format="%h" -n 1
+       - name: Lista arquivos
+         run: ls -a  
