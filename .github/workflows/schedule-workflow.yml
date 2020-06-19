@@ -1,8 +1,8 @@
-name: Programa ação para ser executada a cada 5 minutos
+name: Programa ação para ser executada todo dia 05/12 as 12:01
 
 on:
   schedule:
-    - cron: "0/5 * * * *"
+    - cron: "1 12 5 12 *"
 
 jobs:
   job-escreve-ok:

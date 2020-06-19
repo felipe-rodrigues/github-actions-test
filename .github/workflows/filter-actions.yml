@@ -1,0 +1,15 @@
+name: Workflow somente para branches de feature e arquivos js
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+    paths:
+      - '**.js'
+
+jobs:
+  job-escreve-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: escreve build
+        run: echo "Esse é o build"
