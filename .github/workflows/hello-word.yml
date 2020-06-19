@@ -1,0 +1,10 @@
+name: Hello Word
+
+on: [push]
+
+jobs:
+  run-hello-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: escrevendo hello world
+        run: echo "Hello Wolrd"
