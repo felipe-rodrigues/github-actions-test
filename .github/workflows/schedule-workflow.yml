@@ -1,0 +1,12 @@
+name: Programa ação para ser executada a cada 5 minutos
+
+on:
+  schedule:
+    - cron: "0/5 * * * *"
+
+jobs:
+  job-escreve-ok:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Esreve ok
+        run: echo "Ok"
