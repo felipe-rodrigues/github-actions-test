@@ -3,7 +3,7 @@ name: Hello Word
 on: [push]
 
 jobs:
-  job-escreve-coisas:
+  job-escreve-coisas-ubuntu:
     runs-on: ubuntu-latest
     steps:
       - name: escrevendo hello world
@@ -11,4 +11,13 @@ jobs:
       - name: escrevendo versão do git
         run:  git --version 
       - name: escrevendo estrutura de pasta
-        run: ls  
+        run: ls
+  job-escreve-coisas-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Escreve diretorio
+        run: Get-Location
+      - name: Executa pwd
+        run: pwd
+        shell: bash
+
