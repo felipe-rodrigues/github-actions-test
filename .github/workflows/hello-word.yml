@@ -3,10 +3,12 @@ name: Hello Word
 on: [push]
 
 jobs:
-  run-hello-command:
+  job-escreve-coisas:
     runs-on: ubuntu-latest
     steps:
       - name: escrevendo hello world
         run: echo "Hello Wolrd"
-      - name: escrevendo commit code
+      - name: escrevendo versão do git
         run:  git --version 
+      - name: escrevendo ultimo commit
+        run: git log --format="%h" -n 1  
