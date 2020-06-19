@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Escreve diretorio
         run: Get-Location
-      - name: Executa pwd
+      - name: Executa pwd com bash do linux
         run: pwd
         shell: bash
 
