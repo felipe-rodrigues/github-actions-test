@@ -16,5 +16,7 @@ jobs:
         if: failure()
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"    
+        run: echo "$JOB_CONTEXT"
+      - name: Imprime mensagem se contexto do github teve sucesso
+        run: echo "Github contexto com sucesso"     
 
