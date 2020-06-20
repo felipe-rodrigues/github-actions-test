@@ -1,0 +1,26 @@
+name: Executa jobs e steps com condicionais
+
+
+on: [push, pull_request]
+
+jobs:
+  job-executa-somente-se-push:
+    runs-on: ubuntu-latest
+    if: github.event_name ==  'push'
+    steps:
+      - name: Imprime contexto do github
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Imprime contexto do job somente se primeiro passo falhou
+        if: failure()
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"
+      - name: Imprime mensagem se contexto do github teve sucesso
+        run: echo "Github contexto com sucesso"   
+      - name: Imprime independete doque aconteceu nos passos anteriores
+        if: always()
+        run: echo "hello world"  
+
+
