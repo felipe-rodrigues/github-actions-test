@@ -1,0 +1,13 @@
+name: Executa jobs e steps com condicionais
+
+
+on: [push, pull_request]
+
+jobs:
+  job-executa-somente-se-push:
+    runs-on: ubuntu-latest
+    if: github.event_name ==  'push'
+    steps:
+      - name: Imprime contexto do github
+        run: echo ${{ toJson(github) }}
+
