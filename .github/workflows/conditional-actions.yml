@@ -9,5 +9,12 @@ jobs:
     if: github.event_name ==  'push'
     steps:
       - name: Imprime contexto do github
-        run: echo ${{ toJson(github) }}
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Imprime contexto do job somente se primeiro passo falhou
+        if: failure()
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"    
 
