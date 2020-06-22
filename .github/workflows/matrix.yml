@@ -1,0 +1,17 @@
+name: Executar Build em Multiplas versoes do node
+
+on: push
+
+
+jobs:
+  job_build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_versions: [6,8,10]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node_version: ${{ matrix.node_version }}
+      - name: print node version
+        run: node -v
