@@ -15,7 +15,7 @@ jobs:
           ls
           pwd
       - name: escreve versao docker
-        run: docker -vs
+        run: docker -v
   job-escreve-coisas-windows:
     runs-on: windows-latest
     needs: ["job-escreve-coisas-ubuntu"]
